@@ -1,4 +1,4 @@
-# RealTimeMonitoringAndAlertingSystem
+# RealTime Monitoring And Alerting System
 This Project integrates with ELK stack which is Elastic search, Logstash and Kibana to collect the logs and visualize them
 ## Summary
 The system's core functionalities encompass the seamless collection of metrics, modification of responses, and visualization through an intuitive dashboard. Administrators have the capability to configure alert rules based on service-specific criteria, enabling prompt intervention in scenarios such as prolonged response times, service heartbeats reaching zero, or excessive service requests. With a target of maintaining a 99% service availability, reducing average resolution times by 40%, and mitigating the financial impact of downtime incidents, the system promises significant business value.<br>
@@ -9,22 +9,19 @@ In conclusion, this project endeavors to enhance service reliability, reduce dow
 
 ## Table Of Contents
 1.	System Proposal
-2.	Introduction
-3.	Functional Requirements
-4.	Non-Functional Requirements
-5.	Use Case Diagram
-6.	Activity Diagram
-7.	Sequence Diagram
-8.	Class Diagram
-9.	Object Diagram
-10.	Package Diagram
-11.	Project Construction
-12.	Output
-13.	API Documentation
-14.	Future Scope
-15.	Conclusion
-16.	References
-17.	Appendix
+2.	Functional Requirements
+3.	Non-Functional Requirements
+4.	Use Case Diagram
+5.	Activity Diagram
+6.	Sequence Diagram
+7.	Class Diagram
+8.	Object Diagram
+9.	Package Diagram
+10.	Project Construction
+11.	Output
+12.	API Documentation
+13.	Future Scope
+14.	Conclusion
 ## System Proposal
 ### Business Need
 In today's fast-paced digital landscape, ensuring the uninterrupted operation of critical services such as databases and payment systems is essential for businesses. Any downtime or performance degradation in these services can lead to financial losses, customer dissatisfaction, and reputation damage. To address this need, I propose the development of a real-time critical service monitoring and alerting system.
@@ -47,54 +44,78 @@ In today's fast-paced digital landscape, ensuring the uninterrupted operation of
 3.	Autoscaling be configured in case of huge traffic is identified and integrated with the environment.
 4.	The alerts threshold should be set for real time otherwise there are chances for false alerts
 
-### Functional Requirements
-**1.	Monitoring Service**
-1.1 Data Collection
+## Functional Requirements
+### 1.	Monitoring Service
+#### 1.1 Data Collection
 •	Develop a common service responsible for collecting metrics from multiple services, including the Database service and Payment service (developed as mocks for the demo).
 •	The common service will initiate requests to the mock services for health checks and access the actuator of the mock service for monitoring.
 •	The logs are stored on to the Logstash which should be linked to Elastic Search and shows results using visualization tool which is Kibana in this case
-1.2 Response Modification
+#### 1.2 Response Modification
 •	Modify responses received from mock services by adding a timestamp, service name, and the status of the service being monitored.
 •	Transmit the modified responses to the Dashboard for visualization.
-1.3 Sensitive Data Handling
+#### 1.3 Sensitive Data Handling
 •	Implement a sensitive data check for logs received from mock services before forwarding them to the Elasticsearch using Filebeats. Sensitive data, if present, should be masked.
-1.4 Dynamic Configuration
+#### 1.4 Dynamic Configuration
 •	Enable the addition of new services for monitoring by simply adding the service's link to a configuration file.
-**2.	Alerting Mechanism**
+### 2.	Alerting Mechanism
 The alerting mechanism will send timely alerts based on the following rules:
-2.1	Response Time Exceeds Threshold
-2.1.1	Metric: Response time for a service
-2.1.2	Threshold: Response time exceeding 20 seconds.
-2.1.3	Alert Severity: Critical
-2.1.4	Notification Recipients: POC and the respective dashboard team responsible for the service.
-2.1.5	Escalation Policy: Notify relevant team members every 5 minutes until acknowledged.
-2.1.6	Alert Suppression: Do not trigger this alert for the same service within 5 minutes if it has already been alerted.
-2.2	Service Heartbeat Is Lost
-2.2.1	Metric: Service heartbeat
-2.2.2	Threshold: Service heartbeat equals zero.
-2.2.3	Alert Severity: Critical
-2.2.4	Notification Recipients: POC and the respective dashboard team responsible for the service.
-2.2.5	Escalation Policy: Notify relevant team members every 2 minutes until acknowledged.
-2.2.6	Alert Suppression: Do not trigger this alert for the same service within 2 minutes if it has already been alerted.
-2.3	Request Rate Exceeds Threshold
-2.3.1	Metric: Number of requests for a service per second
-2.3.2	Threshold: Number of requests exceeding 200 per second.
-2.3.3	Alert Severity: Warning
-2.3.4	Notification Recipients: POC and the respective dashboard team responsible for the service.
-2.3.5	Escalation Policy: Notify relevant team members every 10 minutes until acknowledged.
-2.3.6	Alert Suppression: Do not trigger this alert for the same service within 10 minutes if it has already been alerted.
-2.4	High CPU Utilization
-2.4.1	Metric: CPU Utilization
-2.4.2	Threshold: CPU utilization exceeding 60%.
-2.4.3	Alert Severity: Warning
-2.4.4	Notification Recipients: POC and the IT Operations team.
-2.4.5	Escalation Policy: Notify IT Operations team every 5 minutes until acknowledged.
-2.4.6	Alert Suppression: Do not trigger this alert for the same service within 5 minutes if it has already been alerted.
-**3.	Dashboard**
+#### 2.1	Response Time Exceeds Threshold
+#### 2.1.1	Metric: 
+Response time for a service
+#### 2.1.2	Threshold: 
+Response time exceeding 20 seconds.
+#### 2.1.3	Alert Severity: 
+Critical
+#### 2.1.4	Notification Recipients: 
+POC and the respective dashboard team responsible for the service.
+#### 2.1.5	Escalation Policy: 
+Notify relevant team members every 5 minutes until acknowledged.
+#### 2.1.6	Alert Suppression: 
+Do not trigger this alert for the same service within 5 minutes if it has already been alerted.
+### 2.2	Service Heartbeat Is Lost
+#### 2.2.1	Metric: 
+Service heartbeat
+#### 2.2.2	Threshold: 
+Service heartbeat equals zero.
+#### 2.2.3	Alert Severity: 
+Critical
+#### 2.2.4	Notification Recipients: 
+POC and the respective dashboard team responsible for the service.
+#### 2.2.5	Escalation Policy: 
+Notify relevant team members every 2 minutes until acknowledged.
+#### 2.2.6	Alert Suppression: 
+Do not trigger this alert for the same service within 2 minutes if it has already been alerted.
+### 2.3	Request Rate Exceeds Threshold
+#### 2.3.1	Metric: 
+Number of requests for a service per second
+#### 2.3.2	Threshold: 
+Number of requests exceeding 200 per second.
+#### 2.3.3	Alert Severity: 
+Warning
+#### 2.3.4	Notification Recipients: 
+POC and the respective dashboard team responsible for the service.
+#### 2.3.5	Escalation Policy: 
+Notify relevant team members every 10 minutes until acknowledged.
+#### 2.3.6	Alert Suppression: 
+Do not trigger this alert for the same service within 10 minutes if it has already been alerted.
+### 2.4	High CPU Utilization
+#### 2.4.1	Metric: 
+CPU Utilization
+#### 2.4.2	Threshold: 
+CPU utilization exceeding 60%.
+#### 2.4.3	Alert Severity: 
+Warning
+#### 2.4.4	Notification Recipients: 
+POC and the IT Operations team.
+#### 2.4.5	Escalation Policy: 
+Notify IT Operations team every 5 minutes until acknowledged.
+#### 2.4.6	Alert Suppression: 
+Do not trigger this alert for the same service within 5 minutes if it has already been alerted.
+### 3.	Dashboard
 The system should provide a user-friendly dashboard that allows users to visualize the performance of the monitored services. The dashboard should display real-time data and historical performance metrics on Kibana Dashboard
-**4.	Alert Rule Configuration to Admin**
+### 4.	Alert Rule Configuration to Admin
 Administrators should be able to configure alert rules based on service-specific criteria. This includes defining thresholds for response time, heartbeat, and request rates for each monitored service. The system should allow for easy modification and customization of these alert rules.
-**5.	Automatic Email Trigger**
+### 5.	Automatic Email Trigger
 The email should be configured to be sent to the POC and the team responsible for each dashboard separately
 ### Non-Functional Requirements
 **1.	Operational Requirements**
