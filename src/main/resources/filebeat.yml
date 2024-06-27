@@ -1,0 +1,8 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - /MonitoringService/*.log
+  json.keys_under_root: true
+  json.add_error_key: true
+output.logstash:
+  hosts: ["localhost:5044"]
