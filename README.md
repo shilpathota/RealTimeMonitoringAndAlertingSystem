@@ -117,60 +117,86 @@ The system should provide a user-friendly dashboard that allows users to visuali
 Administrators should be able to configure alert rules based on service-specific criteria. This includes defining thresholds for response time, heartbeat, and request rates for each monitored service. The system should allow for easy modification and customization of these alert rules.
 ### 5.	Automatic Email Trigger
 The email should be configured to be sent to the POC and the team responsible for each dashboard separately
-### Non-Functional Requirements
-**1.	Operational Requirements**
-1.1	Availability
-1.1.1	Metric: System Uptime
-1.1.2	Objective: The monitoring and alerting service should have a minimum availability of 99.99%.
-1.1.3	Measurement Interval: Availability should be measured and reported monthly.
-**2.	Performance Requirements**
-2.1	Real-time Monitoring Latency:
-2.1.1	Metric: Latency in processing and responding to monitoring data.
-2.1.2	Objective: The system should provide real-time monitoring with a latency of less than 1 second.
-2.1.3	Measurement Interval: Latency should be measured and reported continuously.
-2.2	Handling Data Volume:
-2.2.1	Metric: Maximum number of monitoring data points processed per second.
-2.2.2	Objective: The system should be capable of handling a high volume of data without performance degradation, supporting a data rate of up to 100,000 requests per second.
-2.2.3	Measurement Interval: Data processing performance should be tested and reported quarterly.
-**3.	Security Requirements**
-3.1	Access Control:
-3.1.1	Metric: Unauthorized access attempts.
-3.1.2	Objective: Access to the monitoring and alerting service should be restricted to authorized users and systems. Unauthorized access attempts should be minimized.
-3.1.3	Measurement Interval: Access attempts should be logged and monitored continuously.
-3.2	Data Encryption:
-3.2.1	Metric: Percentage of data transmitted between the common service and mock services that is encrypted.
-3.2.2	Objective: All data transmitted between the common service and mock services should be encrypted to maintain data integrity and confidentiality.
-3.2.3	Measurement Interval: Encryption compliance should be verified and reported monthly.
-3.3	Dashboard Access Control:
-3.3.1	Metric: Unauthorized access attempts to the dashboard.
-3.3.2	Objective: The dashboard should be hosted on a server with access restricted to internal employees. Unauthorized access attempts should be minimized.
-3.3.3	Measurement Interval: Access attempts to the dashboard should be logged and monitored continuously.
-**4.	Scalability Requirements**
-5.1	Scaling Capacity:
-5.1.1	Metric: Maximum number of mock services that can be monitored simultaneously.
-5.1.2	Objective: The monitoring service should be designed to accommodate a growing number of mock services and should support monitoring of at least 500 services concurrently.
-5.1.3	Measurement Interval: Scalability should be tested and reported annually.
-5.2	Horizontal Scaling:
-5.2.1	Metric: Number of additional instances or nodes added to the monitoring system for workload distribution.
-5.2.2	Objective: The monitoring service should support horizontal scaling by adding new instances or nodes to distribute the workload efficiently.
-5.2.3	Measurement Interval: Horizontal scaling capacity should be tested and reported biannually.
-**6.	Logging and Auditing**
-6.1 Log Access:
-6.1.1 Metric: Time to retrieve logs for troubleshooting or auditing purposes.
-6.1.2 Objective: Logs should be stored securely and be easily accessible for troubleshooting and auditing purposes. The time to retrieve logs should not exceed 5 seconds.
-6.1.3 Measurement Interval: Log retrieval time should be tested and reported quarterly
-### Analysis Models
-### Use Case Diagram
+## Non-Functional Requirements
+### 1.	Operational Requirements
+#### 1.1	Availability
+##### 1.1.1	Metric: 
+System Uptime
+##### 1.1.2	Objective: 
+The monitoring and alerting service should have a minimum availability of 99.99%.
+##### 1.1.3	Measurement Interval: 
+Availability should be measured and reported monthly.
+### 2.	Performance Requirements
+#### 2.1	Real-time Monitoring Latency:
+##### 2.1.1	Metric: 
+Latency in processing and responding to monitoring data.
+##### 2.1.2	Objective: 
+The system should provide real-time monitoring with a latency of less than 1 second.
+##### 2.1.3	Measurement Interval: 
+Latency should be measured and reported continuously.
+#### 2.2	Handling Data Volume:
+##### 2.2.1	Metric: 
+Maximum number of monitoring data points processed per second.
+##### 2.2.2	Objective: 
+The system should be capable of handling a high volume of data without performance degradation, supporting a data rate of up to 100,000 requests per second.
+##### 2.2.3	Measurement Interval: 
+Data processing performance should be tested and reported quarterly.
+### 3.	Security Requirements
+#### 3.1	Access Control:
+##### 3.1.1	Metric: 
+Unauthorized access attempts.
+##### 3.1.2	Objective: 
+Access to the monitoring and alerting service should be restricted to authorized users and systems. Unauthorized access attempts should be minimized.
+##### 3.1.3	Measurement Interval: 
+Access attempts should be logged and monitored continuously.
+#### 3.2	Data Encryption:
+##### 3.2.1	Metric: 
+Percentage of data transmitted between the common service and mock services that is encrypted.
+##### 3.2.2	Objective: 
+All data transmitted between the common service and mock services should be encrypted to maintain data integrity and confidentiality.
+##### 3.2.3	Measurement Interval: 
+Encryption compliance should be verified and reported monthly.
+#### 3.3	Dashboard Access Control:
+##### 3.3.1	Metric: 
+Unauthorized access attempts to the dashboard.
+##### 3.3.2	Objective: 
+The dashboard should be hosted on a server with access restricted to internal employees. Unauthorized access attempts should be minimized.
+##### 3.3.3	Measurement Interval: 
+Access attempts to the dashboard should be logged and monitored continuously.
+### 4.	Scalability Requirements
+#### 4.1	Scaling Capacity:
+##### 4.1.1	Metric: 
+Maximum number of mock services that can be monitored simultaneously.
+##### 4.1.2	Objective: 
+The monitoring service should be designed to accommodate a growing number of mock services and should support monitoring of at least 500 services concurrently.
+##### 4.1.3	Measurement Interval: 
+Scalability should be tested and reported annually.
+#### 4.2	Horizontal Scaling:
+##### 4.2.1	Metric: 
+Number of additional instances or nodes added to the monitoring system for workload distribution.
+##### 4.2.2	Objective: 
+The monitoring service should support horizontal scaling by adding new instances or nodes to distribute the workload efficiently.
+##### 4.2.3	Measurement Interval: 
+Horizontal scaling capacity should be tested and reported biannually.
+### 5.	Logging and Auditing
+#### 5.1 Log Access:
+##### 5.1.1 Metric: 
+Time to retrieve logs for troubleshooting or auditing purposes.
+##### 5.1.2 Objective: 
+Logs should be stored securely and be easily accessible for troubleshooting and auditing purposes. The time to retrieve logs should not exceed 5 seconds.
+##### 5.1.3 Measurement Interval: 
+Log retrieval time should be tested and reported quarterly
+## Use Case Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/bdc54039-c8a5-493f-873e-93acfdc32257)
 
-				Figure 5.1 – Use Case Diagram
+				<i>Figure 5.1 – Use Case Diagram</i>
 
-#### Actors
+### Actors
 Payment Service (Mock), Database Service(Mock), Support Team
-#### Pre Condition
+### Pre Condition
 -	Payment Service and Database Service should be up and running.
 -	It should have actuator health check to be exposed.
-#### Description
+### Description
 In figure 1 - “Payment Service(Mock)” and “Database Service(Mock)” are the actors representing the user interacting with the Monitoring and Alerting System<br>
 The “Dynamic Configuration Handler” use case represents the handling of the configuration dynamically by scanning the configuration file and add/delete the service monitoring<br>
 The “Data Collection Service” Collects the data from the services listed in Configuration Handler and sends to Modify Response Service<br>
@@ -180,20 +206,20 @@ The “Health Check Service” collects the heartbeats of the services listed in
 The “LogStash” collects the logs as and when the log files are filled with data using Filebeats<br>
 The “Elastic Search” stores the logs using indexing mechanism which is in turn visualized in Kibana and used by the user<br>
 The “Support Team” visualizes the logs and gets the alerts from the Kibana<br>
-### Activity Diagram
+## Activity Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/3c2b6a35-64e0-45f3-b41a-dc1c692288a0)
 
-Figure 6.1 – Activity Diagram<br>
+<i>Figure 6.1 – Activity Diagram</i><br>
 In the Figure 2, the users register to the configuration handler which collects the logs data and other performance metrics from the users every 2 seconds and condition the data to its needs and sends to Kibana using Logstash and Elastic Search<br>
 The users here are the mock services sends the heartbeat every 2 seconds to the Health check and the data is sent to File beats and then using Logstash it is moved to Elastic Search and then visualized in Kibana<br>
 The user is down and the health check data send to kibana triggers the alert and sends mail to respective Support team <br>
 The user responds to the heartbeat after 20 seconds of delay then the data sent to  Kibana there by triggering the respective Support Team<br>
 The flow in figure 2 is exited on triggering the mail alert action or posting the data on to Kibana<br>
 The user is continued to be monitored by the Data Collection Service and Health Check Service and the steps are repeated.<br>
-### Sequence Diagram
+## Sequence Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/1c8f12a4-456c-492b-8295-c3d89a527895)
 
-Figure 7.1 – Sequence Diagram<br>
+<i>Figure 7.1 – Sequence Diagram</i><br>
 The Interaction  in Figure 3 starts with the Services registering for monitoring using the configuration file with Dynamic Configuration Handler<br>
 The Data collection Service triggers the request for the metrics on the scheduled time interval and the metrics is returned by the service<br>
 The Scheduler service initiates the health check at regular intervals configured<br>
@@ -202,10 +228,10 @@ The further interaction with Logfile happens when the logs collected are written
 The Support user actor request for specific metrics and filtered in Kibana which displays the elastic search data based on the index chosen by support user<br>
 The Kibana starts interaction with support user when the alert rules set are triggered and the interaction ends by sending a mail to support users<br>
 
-### Class Diagram
+## Class Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/903b3c0f-471c-45e5-9b3b-bae0c5efc818)
 
-Figure  8.1 – Class Diagram<br>
+<i>Figure  8.1 – Class Diagram</i><br>
 The Class Diagram in Figure 4 shows different classes that are involved in the development of the Monitoring and Alerting service <br>
 The ‘DynamicConfigurationHandlerController’ class collects the list of services by reading the config file and updating global values so as the other classes to be picked up. It also has a method to trigger checking for updates on configuration file/database based on inbuilt timer<br>
 The ‘DataCollectionService’ class is responsible for collecting the metrics and handling the request by sending the collected data to further processing<br>
@@ -216,30 +242,36 @@ The ‘SchedulerService’ class is responsible for triggering health checks for
 The ‘DataCollectionController’ exposes all the endpoints which will initiate the service methods<br>
 The ‘HealthCheckController’ exposes the endpoints to initiate the health check and uses the methods in Service class<br>
 The ‘ServiceRegistryService’ supports the Dynamic Configuration Handler Controller to perform the register and deregister operations<br>
-### Object Diagram
+## Object Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/6cb46df1-360e-4be7-bbb1-456f6432cc8b)
 
-Fig:9.1-Object Diagram<br>
+<i>Fig:9.1-Object Diagram</i><br>
 The Object Diagram represents the servicesList object is obtained from the Dynamic Configuration Handler by fetching all the registered services and then passed to the Data collection service and Health Check Service<br>
 The Object is then used by the Services to collect the data from respective services and publish them on to the logs for further monitoring <br>
-### Package Diagram
+## Package Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/c5d418ff-0431-4bd2-8138-141c209a2a93)
 
-Fig 10.1- Package Diagram<br>
+<i>Fig 10.1- Package Diagram</i><br>
 The provided package diagram outlines the structure of the MonitoringService project, organized into several packages to maintain a modular and well-organized codebase. Here's a description of each package:<br>
-1.	com.mock.component:
-•	Description: This package houses the MockEndPoints class, which is presumably responsible for defining mock endpoints or services. These mock services may be used for testing or simulating interactions during development.
-2.	com.monitor.configuration:
-•	Description: This package encapsulates classes related to configuration settings for the monitoring service. The MonitorConfig class is present, indicating its role in configuring the monitoring service.
-3.	com.monitor.controller:
-•	Description: This package contains controllers responsible for handling various aspects of the monitoring service. Notable controllers include DataCollectionController, DynamicConfigurationHandlerController, and HealthcheckController. These controllers likely manage data collection, dynamic configuration, and health checks, respectively.
-4.	com.monitor.objects:
-•	Description: The objects package contains classes representing key entities or data structures within the monitoring service. Metrics and ServiceInfo classes suggest a focus on encapsulating metrics and service-related information.
-5.	com.monitor.services:
-•	Description: This package hosts service classes essential for the functioning of the monitoring service. Notable services include DataCollectionService, HealthCheckService, SchedulerService, and ServiceRegistryService, indicating responsibilities related to data collection, health checks, scheduling, and service registration.
-6.	com.monitor.utilities:
-•	Description: The utilities package accommodates utility classes crucial for auxiliary functionalities. DataSensitivityCheck and ModifyResponse classes imply roles related to data sensitivity checks and response modifications, respectively.
-### Hardware and Software Specification
+### 1.	com.mock.component:
+	<b>Description: </b>
+This package houses the MockEndPoints class, which is presumably responsible for defining mock endpoints or services. These mock services may be used for testing or simulating interactions during development.
+### 2.	com.monitor.configuration:
+	<b>Description:</b>
+ This package encapsulates classes related to configuration settings for the monitoring service. The MonitorConfig class is present, indicating its role in configuring the monitoring service.
+### 3.	com.monitor.controller:
+	<b>Description:</b>
+ This package contains controllers responsible for handling various aspects of the monitoring service. Notable controllers include DataCollectionController, DynamicConfigurationHandlerController, and HealthcheckController. These controllers likely manage data collection, dynamic configuration, and health checks, respectively.
+ ### 4.	com.monitor.objects:
+	<b>Description:</b>
+ The objects package contains classes representing key entities or data structures within the monitoring service. Metrics and ServiceInfo classes suggest a focus on encapsulating metrics and service-related information.
+### 5.	com.monitor.services:
+	<b>Description:</b>
+ This package hosts service classes essential for the functioning of the monitoring service. Notable services include DataCollectionService, HealthCheckService, SchedulerService, and ServiceRegistryService, indicating responsibilities related to data collection, health checks, scheduling, and service registration.
+### 6.	com.monitor.utilities:
+	<b>Description:</b>
+ The utilities package accommodates utility classes crucial for auxiliary functionalities. DataSensitivityCheck and ModifyResponse classes imply roles related to data sensitivity checks and response modifications, respectively.
+## Hardware and Software Specification
 •	OS - Windows
 •	Java Version – JDK 17
 •	Build Tool – Maven
@@ -247,67 +279,67 @@ The provided package diagram outlines the structure of the MonitoringService pro
 •	Version of Spring – 3.1.4
 •	Dependencies Used – Wiremock, logstash, ElasticSearch, Swagger
 •	Tools Used – Kibana, Elastic Search, Logstash - (Version -8.11.0), FileBeat ( 8.11.1),Postman (10.20)
-### Output
-#### Mock Configuration
+## Output
+### Mock Configuration
 The output of mock configuration which was created using WireMock
 
 
 ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/c2607837-d78f-4d23-85fe-664f62f59416)
 
-Fig 12.1 – Mock Service Endpoint for Health
+<i>Fig 12.1 – Mock Service Endpoint for Health</i><br>
 ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/46a7d24d-a434-4fd5-81b1-15633d108f00)
 
-Fig 12.2 – Mock Service Endpoint for Metrics
-The registered services can be obtained by calling the endpoint which is exposed by Dynamic configuration Handler Controller
+<i>Fig 12.2 – Mock Service Endpoint for Metrics</i><br>
+The registered services can be obtained by calling the endpoint which is exposed by Dynamic configuration Handler Controller<br>
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/d3dc05f8-3d27-4748-a19c-d6b353b539bc)
 
-Fig 12.3 – Registered Services Endpoint
-Data Collection Controller exposes the endpoint for collecting the metrics. This endpoint can be used by the services to initiate the metrics monitoring or it will be triggered by scheduler service every 5 minutes
+<i>Fig 12.3 – Registered Services Endpoint</i><br>
+Data Collection Controller exposes the endpoint for collecting the metrics. This endpoint can be used by the services to initiate the metrics monitoring or it will be triggered by scheduler service every 5 minutes<br>
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/08b6b654-a1c8-447e-bac6-ae88d72527b1)
 
-Fig 12.4 – Collect Data Endpoint
+<i>Fig 12.4 – Collect Data Endpoint</i><br>
 
-Health check controller exposes the endpoint for collecting the health check details of the services. This can also be initiated by the endpoint which is shown in the below postman request or it is auto triggered by the Scheduler Service every 5 minutes
+Health check controller exposes the endpoint for collecting the health check details of the services. This can also be initiated by the endpoint which is shown in the below postman request or it is auto triggered by the Scheduler Service every 5 minutes<br>
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/ad42b147-c500-4bc1-b224-13b824b0b583)
 
-Fig 12.5 – Payment Health Endpoint
+<i>Fig 12.5 – Payment Health Endpoint</i><br>
 
 On calling these endpoints it would be logged on to the logstash by using filebeat. This filebeat can run on the server those services to be monitored will be running and it collects and sends to logstash. Using logstash configuration file, we define and filter the logs based on the category and map them to the index in elastic search.
-The logstash configuration is shown below for filtering
+The logstash configuration is shown below for filtering<br>
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/4b43714b-ac86-48ad-89da-e8908c9088e2)
 
-Fig 12.6 – Logstash Configuration
+<i>Fig 12.6 – Logstash Configuration</i><br>
 
-Kibana shows the output as follows for the health index for example
+Kibana shows the output as follows for the health index for example<br>
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/803aa4bf-18f9-4863-9bcb-809b23541a98)
 
-Fig 12.7 – Kibana Output
+<i>Fig 12.7 – Kibana Output</i><br>
 
-We configured logs for each of the requirements which is shown below
+We configured logs for each of the requirements which is shown below<br>
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/d351c97d-fef1-4447-988f-9eb5f3b7a658)
 
-Fig 12.7 – Kibana Rules
+<i>Fig 12.7 – Kibana Rules</i><br>
 
 These rules can be enhanced by linking them to trigger mail alerts using gold version of the Kibana
-API Documentation
+## API Documentation
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/5f4b857e-6f49-4057-bc8d-3d46a7b6bb23)
 
-Fig 13.1 – Swagger Documentation
+<i>Fig 13.1 – Swagger Documentation</i><br>
 
-### Future Scope
+## Future Scope
 •	The alerts can be linked to email with the gold version of Kibana
 •	The solution can be leveraged for enterprise wide so they have common solution across by adding security standards for accessing the services
 •	The Metrics can be widened based on the company requirements
 •	Can be auto scaled by integrating with Kubernetes and docker
 •	The service can be leveraged for the common features across enterprise by adding those functionalities
-### Conclusion
+## Conclusion
 In conclusion, the outlined project aims to establish a comprehensive Monitoring and Alerting System with a user-friendly Dashboard. The system is designed to collect, modify, and visualize performance metrics from various services, ensuring the reliability and efficiency of the monitored services. The Alerting Mechanism enhances proactive issue identification by notifying relevant stakeholders based on predefined rules, allowing for timely intervention and resolution.
 The Dashboard, powered by Kibana, provides users with real-time and historical performance data, contributing to informed decision-making. Administrators have the flexibility to configure and customize alert rules tailored to each service's specific criteria, ensuring adaptability to evolving operational requirements.
 On the non-functional side, the system prioritizes operational excellence, aiming for a high availability rate of 99.99%. Real-time monitoring latency is targeted to be less than 1 second, ensuring swift responsiveness. The system is designed to handle a substantial data volume, supporting up to 100,000 requests per second without compromising performance.
 Security measures are robust, with access control mechanisms, data encryption, and restricted dashboard access, safeguarding the system from unauthorized access. Scalability is a key focus, with the system built to accommodate a growing number of services through both scaling capacity and horizontal scaling.
 Logging and auditing capabilities are integral for troubleshooting and auditing purposes, with logs stored securely and accessible within a short retrieval time of 5 seconds.
 In summary, the proposed Monitoring and Alerting System aligns with industry best practices and standards, addressing both functional and non-functional requirements. It establishes a robust foundation for maintaining the health, performance, and security of the monitored services, contributing to overall system reliability and user satisfaction. Continuous monitoring, evaluation, and potential adjustments will be essential to ensure the system evolves alongside the changing needs of the services it monitors.
-### File Beats Configuration
+## File Beats Configuration
 <pre>input {
   beats {
     port => 5044
