@@ -255,31 +255,31 @@ The Object is then used by the Services to collect the data from respective serv
 <i>Fig 10.1- Package Diagram</i><br>
 The provided package diagram outlines the structure of the MonitoringService project, organized into several packages to maintain a modular and well-organized codebase. Here's a description of each package:<br>
 ### 1.	com.mock.component:
-	<b>Description: </b>
+<b>Description: </b>
 This package houses the MockEndPoints class, which is presumably responsible for defining mock endpoints or services. These mock services may be used for testing or simulating interactions during development.
 ### 2.	com.monitor.configuration:
-	<b>Description:</b>
+<b>Description:</b>
  This package encapsulates classes related to configuration settings for the monitoring service. The MonitorConfig class is present, indicating its role in configuring the monitoring service.
 ### 3.	com.monitor.controller:
-	<b>Description:</b>
+<b>Description:</b>
  This package contains controllers responsible for handling various aspects of the monitoring service. Notable controllers include DataCollectionController, DynamicConfigurationHandlerController, and HealthcheckController. These controllers likely manage data collection, dynamic configuration, and health checks, respectively.
  ### 4.	com.monitor.objects:
-	<b>Description:</b>
+ <b>Description:</b>
  The objects package contains classes representing key entities or data structures within the monitoring service. Metrics and ServiceInfo classes suggest a focus on encapsulating metrics and service-related information.
 ### 5.	com.monitor.services:
-	<b>Description:</b>
+<b>Description:</b>
  This package hosts service classes essential for the functioning of the monitoring service. Notable services include DataCollectionService, HealthCheckService, SchedulerService, and ServiceRegistryService, indicating responsibilities related to data collection, health checks, scheduling, and service registration.
 ### 6.	com.monitor.utilities:
-	<b>Description:</b>
+<b>Description:</b>
  The utilities package accommodates utility classes crucial for auxiliary functionalities. DataSensitivityCheck and ModifyResponse classes imply roles related to data sensitivity checks and response modifications, respectively.
 ## Hardware and Software Specification
-•	OS - Windows
-•	Java Version – JDK 17
-•	Build Tool – Maven
-•	Framework Used – Springboot
-•	Version of Spring – 3.1.4
-•	Dependencies Used – Wiremock, logstash, ElasticSearch, Swagger
-•	Tools Used – Kibana, Elastic Search, Logstash - (Version -8.11.0), FileBeat ( 8.11.1),Postman (10.20)
+- OS - Windows
+- Java Version – JDK 17
+- Build Tool – Maven
+- Framework Used – Springboot
+- Version of Spring – 3.1.4
+- Dependencies Used – Wiremock, logstash, ElasticSearch, Swagger
+- Tools Used – Kibana, Elastic Search, Logstash - (Version -8.11.0), FileBeat ( 8.11.1),Postman (10.20)
 ## Output
 ### Mock Configuration
 The output of mock configuration which was created using WireMock
@@ -334,12 +334,12 @@ These rules can be enhanced by linking them to trigger mail alerts using gold ve
 •	Can be auto scaled by integrating with Kubernetes and docker
 •	The service can be leveraged for the common features across enterprise by adding those functionalities
 ## Conclusion
-In conclusion, the outlined project aims to establish a comprehensive Monitoring and Alerting System with a user-friendly Dashboard. The system is designed to collect, modify, and visualize performance metrics from various services, ensuring the reliability and efficiency of the monitored services. The Alerting Mechanism enhances proactive issue identification by notifying relevant stakeholders based on predefined rules, allowing for timely intervention and resolution.
-The Dashboard, powered by Kibana, provides users with real-time and historical performance data, contributing to informed decision-making. Administrators have the flexibility to configure and customize alert rules tailored to each service's specific criteria, ensuring adaptability to evolving operational requirements.
-On the non-functional side, the system prioritizes operational excellence, aiming for a high availability rate of 99.99%. Real-time monitoring latency is targeted to be less than 1 second, ensuring swift responsiveness. The system is designed to handle a substantial data volume, supporting up to 100,000 requests per second without compromising performance.
-Security measures are robust, with access control mechanisms, data encryption, and restricted dashboard access, safeguarding the system from unauthorized access. Scalability is a key focus, with the system built to accommodate a growing number of services through both scaling capacity and horizontal scaling.
-Logging and auditing capabilities are integral for troubleshooting and auditing purposes, with logs stored securely and accessible within a short retrieval time of 5 seconds.
-In summary, the proposed Monitoring and Alerting System aligns with industry best practices and standards, addressing both functional and non-functional requirements. It establishes a robust foundation for maintaining the health, performance, and security of the monitored services, contributing to overall system reliability and user satisfaction. Continuous monitoring, evaluation, and potential adjustments will be essential to ensure the system evolves alongside the changing needs of the services it monitors.
+In conclusion, the outlined project aims to establish a comprehensive Monitoring and Alerting System with a user-friendly Dashboard. The system is designed to collect, modify, and visualize performance metrics from various services, ensuring the reliability and efficiency of the monitored services. The Alerting Mechanism enhances proactive issue identification by notifying relevant stakeholders based on predefined rules, allowing for timely intervention and resolution.<br>
+The Dashboard, powered by Kibana, provides users with real-time and historical performance data, contributing to informed decision-making. Administrators have the flexibility to configure and customize alert rules tailored to each service's specific criteria, ensuring adaptability to evolving operational requirements.<br>
+On the non-functional side, the system prioritizes operational excellence, aiming for a high availability rate of 99.99%. Real-time monitoring latency is targeted to be less than 1 second, ensuring swift responsiveness. The system is designed to handle a substantial data volume, supporting up to 100,000 requests per second without compromising performance.<br>
+Security measures are robust, with access control mechanisms, data encryption, and restricted dashboard access, safeguarding the system from unauthorized access. Scalability is a key focus, with the system built to accommodate a growing number of services through both scaling capacity and horizontal scaling.<br>
+Logging and auditing capabilities are integral for troubleshooting and auditing purposes, with logs stored securely and accessible within a short retrieval time of 5 seconds.<br>
+In summary, the proposed Monitoring and Alerting System aligns with industry best practices and standards, addressing both functional and non-functional requirements. It establishes a robust foundation for maintaining the health, performance, and security of the monitored services, contributing to overall system reliability and user satisfaction. Continuous monitoring, evaluation, and potential adjustments will be essential to ensure the system evolves alongside the changing needs of the services it monitors.<br>
 ## File Beats Configuration
 <pre>input {
   beats {
