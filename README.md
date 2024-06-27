@@ -189,7 +189,8 @@ Log retrieval time should be tested and reported quarterly
 ## Use Case Diagram
  ![image](https://github.com/shilpathota/RealTimeMonitoringAndAlertingSystem/assets/36531617/bdc54039-c8a5-493f-873e-93acfdc32257)
 
-				<i>Figure 5.1 – Use Case Diagram</i>
+
+<i>Figure 5.1 – Use Case Diagram</i>
 
 ### Actors
 Payment Service (Mock), Database Service(Mock), Support Team
